@@ -1,4 +1,4 @@
-FROM rhel
+FROM registry.access.redhat.com/rhel
 ENV NRPE_BRANCH   nrpe-3.2.1
 RUN  yum install git openssh  openssl openssh-clients openssh-server make httpd php php-cli gcc unzip wget glibc glibc-common gd gd-devel net-snmp openssl-devel  -y
 RUN useradd nagios && echo 'nagios' | passwd nagios --stdin && groupadd nagcmd && usermod -a -G nagcmd nagios && usermod -a -G nagcmd apache
