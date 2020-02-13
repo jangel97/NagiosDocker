@@ -32,8 +32,7 @@ RUN cd /tmp                                                                  && 
     cp src/check_nrpe /usr/local/nagios/libexec/                                && \
     make clean                                                               && \
     cd /tmp && rm -Rf nrpe
-
-ADD etc/ /usr/local/nagios/etc
+RUN echo "cfg_dir=/usr/local/nagios/etc/conf.d" >> /usr/local/nagios/etc/nagios.cfg && mkdir /usr/local/nagios/etc/conf.d
 
 EXPOSE 80
 
