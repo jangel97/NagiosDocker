@@ -3,7 +3,7 @@ ENV NRPE_BRANCH   nrpe-3.2.1
 RUN  yum install git openssh  openssl openssh-clients openssh-server make httpd php php-cli gcc unzip wget glibc glibc-common gd gd-devel net-snmp openssl-devel  -y
 RUN useradd nagios && echo 'nagios' | passwd nagios --stdin && groupadd nagcmd && usermod -a -G nagcmd nagios && usermod -a -G nagcmd apache
 RUN cd /tmp && wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.5.tar.gz && tar xzf nagios-4.4.5.tar.gz
-COPY ./start.sh /nagios
+COPY . /nagios
 WORKDIR /tmp/nagios-4.4.5
 RUN	./configure	&&\
 	make all	&&\
