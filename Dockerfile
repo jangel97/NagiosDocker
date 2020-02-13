@@ -33,5 +33,6 @@ RUN cd /tmp                                                                  && 
     make clean                                                               && \
     cd /tmp && rm -Rf nrpe
 
+EXPOSE 80
 
 CMD ["/bin/bash", "/nagios/start.sh"]
