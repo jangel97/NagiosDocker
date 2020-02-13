@@ -33,7 +33,7 @@ RUN cd /tmp                                                                  && 
     make clean                                                               && \
     cd /tmp && rm -Rf nrpe
 
-COPY etc/ /usr/local/nagios/
+ADD etc/ /usr/local/nagios/etc
 
 EXPOSE 80
 
